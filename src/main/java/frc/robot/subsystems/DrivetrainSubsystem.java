@@ -20,8 +20,8 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.SPI;
 
-import static frc.robot.Constants.*;
 import static frc.robot.Constants.SwerveDrive.*;
+import static frc.robot.Constants.*;
 
 public class DrivetrainSubsystem extends SubsystemBase {
   /**
