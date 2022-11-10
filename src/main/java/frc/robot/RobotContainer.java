@@ -93,6 +93,6 @@ public class RobotContainer {
     // Square the axis
     value = Math.copySign(value * value, value);
 
-    return value;
+    return Constants.SwerveDrive.motorSpeed * value;
   }
 }

@@ -18,6 +18,8 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Robot;
+import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.SPI;
 
 import static frc.robot.Constants.SwerveDrive.*;
@@ -121,7 +123,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
             tab.getLayout("Front Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(2, 0),
-            Mk3SwerveModuleHelper.GearRatio.STANDARD,
+            Mk3SwerveModuleHelper.GearRatio.STANDARD.
             FrontRight.DRIVE_MOTOR,
             FrontRight.STEER_MOTOR,
             FrontRight.STEER_ENCODER,
@@ -183,13 +185,15 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-          //TODO: Renable when want to drive
-    SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
-    SwerveDriveKinematics.desaturateWheelSpeeds(states, MAX_VELOCITY_MPS);
+    if(!Robot.isTestMode()){
+       SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
+        SwerveDriveKinematics.desaturateWheelSpeeds(states, MAX_VELOCITY_MPS);
 
-    m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[0].angle.getRadians());
-    m_frontRightModule.set(states[1].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[1].angle.getRadians());
-    m_backLeftModule.set(states[2].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[2].angle.getRadians());
-    m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[3].angle.getRadians());
+        m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[0].angle.getRadians());
+        m_frontRightModule.set(states[1].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[1].angle.getRadians());
+        m_backLeftModule.set(states[2].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[2].angle.getRadians());
+        m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_MPS * MAX_VOLTAGE, states[3].angle.getRadians());     
+    }
+    
   }
 }
