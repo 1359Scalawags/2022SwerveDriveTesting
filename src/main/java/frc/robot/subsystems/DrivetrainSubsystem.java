@@ -123,7 +123,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
             tab.getLayout("Front Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(2, 0),
-            Mk3SwerveModuleHelper.GearRatio.STANDARD.
+            Mk3SwerveModuleHelper.GearRatio.STANDARD,
             FrontRight.DRIVE_MOTOR,
             FrontRight.STEER_MOTOR,
             FrontRight.STEER_ENCODER,
