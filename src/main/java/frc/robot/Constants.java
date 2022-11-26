@@ -26,10 +26,12 @@ public final class Constants {
      */
     public static final double WHEELBASE_METERS = 0.6; 
 
-
-
-
-
+    public enum WheelPositions {
+        FrontLeft,
+        FrontRight,
+        BackLeft,
+        BackRight
+    }
 
     public static final class SwerveDrive {
         public static final class FrontLeft {

@@ -154,6 +154,22 @@ public class DrivetrainSubsystem extends SubsystemBase {
   }
 
   /**
+   * Access the modules individually for testing
+   */
+  public SwerveModule getModule(WheelPositions position) {
+    if(position == WheelPositions.FrontLeft)
+      return m_frontLeftModule;
+    else if(position == WheelPositions.FrontRight)
+      return m_frontRightModule;
+    // TODO: need the other cases
+    else 
+      return null;
+
+  }
+
+
+
+  /**
    * Sets the gyroscope angle to zero. This can be used to set the direction the robot is currently facing to the
    * 'forwards' direction.
    */
@@ -196,4 +212,5 @@ public class DrivetrainSubsystem extends SubsystemBase {
     }
     
   }
+ 
 }

@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.TurnWheelToAngleCommand;
 
 
 /**
@@ -102,6 +103,10 @@ public class Robot extends TimedRobot {
 
     // Cancels all running commands at the start of test mode.
     CommandScheduler.getInstance().cancelAll();
+    Command testCommand = m_robotContainer.getTestCommand();
+    if(testCommand != null) {
+        testCommand.schedule();
+    }
   }
 
   /** This function is called periodically during test mode. */
