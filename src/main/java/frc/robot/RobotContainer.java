@@ -79,7 +79,8 @@ public class RobotContainer {
 
   public Command getTestCommand() {
     double angle = 30;//Rotation2d.fromDegrees(30).getDegrees();
-    return new TurnWheelToAngleCommand(m_drivetrainSubsystem, WheelPositions.FrontLeft, angle);
+    double speed = 1;
+    return new TurnWheelToAngleCommand(m_drivetrainSubsystem, WheelPositions.FrontLeft, speed, angle);
 
   }
 
