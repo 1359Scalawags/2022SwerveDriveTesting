@@ -176,6 +176,27 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
   }
 
+  public void setModule(WheelPositions position, double speed, double degrees) {
+        double radians = degrees * Math.PI / 180;
+        switch(position) {
+                case FrontLeft:
+                        m_frontLeftModule.set(speed / MAX_VELOCITY_MPS * MAX_VOLTAGE, radians);              
+                        break;
+                case FrontRight:
+                        m_frontRightModule.set(speed / MAX_VELOCITY_MPS * MAX_VOLTAGE, radians);              
+                        break;
+                case BackLeft:
+                        m_backLeftModule.set(speed / MAX_VELOCITY_MPS * MAX_VOLTAGE, radians);              
+                        break;
+                case BackRight:
+                        m_backRightModule.set(speed / MAX_VELOCITY_MPS * MAX_VOLTAGE, radians);              
+                        break;
+                default:
+
+        }
+
+  }
+
 
 
   /**
