@@ -38,25 +38,25 @@ public final class Constants {
             public static final int DRIVE_MOTOR = 7; // FIXME Set front left module drive motor ID
             public static final int STEER_MOTOR = 8; // FIXME Set front left module steer motor ID
             public static final int STEER_ENCODER = 17; // FIXME Set front left steer encoder ID   
-            public static final double STEER_OFFSET = -Math.toRadians(120.0); // FIXME Measure and set front left steer offset            
+            public static final double STEER_OFFSET = -Math.toRadians(5.84685); // FIXME Measure and set front left steer offset            
         }
         public static final class FrontRight {
             public static final int DRIVE_MOTOR = 5; // FIXME Set front left module drive motor ID
             public static final int STEER_MOTOR = 6; // FIXME Set front left module steer motor ID
             public static final int STEER_ENCODER = 15; // FIXME Set front left steer encoder ID
-            public static final double STEER_OFFSET = -Math.toRadians(360.0-175.0); // FIXME Measure and set front left steer offset       
+            public static final double STEER_OFFSET = -Math.toRadians(6.23083); // FIXME Measure and set front left steer offset       
         }
         public static final class BackLeft {
             public static final int DRIVE_MOTOR = 1; // FIXME Set front left module drive motor ID
             public static final int STEER_MOTOR = 2; // FIXME Set front left module steer motor ID
             public static final int STEER_ENCODER = 11; // FIXME Set front left steer encoder ID
-            public static final double STEER_OFFSET = -Math.toRadians(360.0-309.0); // FIXME Measure and set front left steer offset                  
+            public static final double STEER_OFFSET = -Math.toRadians(4.53786); // FIXME Measure and set front left steer offset                  
         }
         public static final class BackRight {
             public static final int DRIVE_MOTOR = 3; // FIXME Set front left module drive motor ID
             public static final int STEER_MOTOR = 4; // FIXME Set front left module steer motor ID
             public static final int STEER_ENCODER = 13; // FIXME Set front left steer encoder ID
-            public static final double STEER_OFFSET = -Math.toRadians(360.0-160.0); // FIXME Measure and set front left steer offset                 
+            public static final double STEER_OFFSET = -Math.toRadians(2.23402); // FIXME Measure and set front left steer offset                 
         }
             public static final double motorSpeed = 0.1;
             public static final double gearRatio = 8.14;

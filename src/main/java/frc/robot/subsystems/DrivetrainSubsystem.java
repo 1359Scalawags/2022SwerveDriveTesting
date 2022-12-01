@@ -128,33 +128,33 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
     // TODO: Fix this for Mk4i
     // We will do the same for the other modules
-    m_frontRightModule = Mk3SwerveModuleHelper.createFalcon500(
+    m_frontRightModule = Mk4iSwerveModuleHelper.createFalcon500(
             tab.getLayout("Front Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(2, 0),
-            Mk3SwerveModuleHelper.GearRatio.STANDARD,
+            Mk4iSwerveModuleHelper.GearRatio.L1,
             FrontRight.DRIVE_MOTOR,
             FrontRight.STEER_MOTOR,
             FrontRight.STEER_ENCODER,
             FrontRight.STEER_OFFSET
     );
     // TODO: Fix this for Mk4i
-    m_backLeftModule = Mk3SwerveModuleHelper.createFalcon500(
+    m_backLeftModule = Mk4iSwerveModuleHelper.createFalcon500(
             tab.getLayout("Back Left Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(4, 0),
-            Mk3SwerveModuleHelper.GearRatio.STANDARD,
+            Mk4iSwerveModuleHelper.GearRatio.L1,
             BackLeft.DRIVE_MOTOR,
             BackLeft.STEER_MOTOR,
             BackLeft.STEER_ENCODER,
             BackLeft.STEER_OFFSET
     );
     // TODO: Fix this for Mk4i
-    m_backRightModule = Mk3SwerveModuleHelper.createFalcon500(
+    m_backRightModule = Mk4iSwerveModuleHelper.createFalcon500(
             tab.getLayout("Back Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(6, 0),
-            Mk3SwerveModuleHelper.GearRatio.STANDARD,
+            Mk4iSwerveModuleHelper.GearRatio.L1,
             BackRight.DRIVE_MOTOR,
             BackRight.STEER_MOTOR,
             BackRight.STEER_ENCODER,
