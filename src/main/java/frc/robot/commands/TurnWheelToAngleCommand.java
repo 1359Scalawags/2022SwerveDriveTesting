@@ -36,20 +36,21 @@ public class TurnWheelToAngleCommand extends CommandBase  {
 
     @Override 
     public void initialize() {
-             
+        m_drivetrainSubsystem.setModule(m_wheelPosition, m_speed, m_angle);      
     }
 
     @Override
     public void execute() {
-        m_drivetrainSubsystem.setModule(m_wheelPosition, m_speed, m_angle);
+        
     }
 
     @Override public boolean isFinished() {
-        if(Math.abs(m_module.getSteerAngle() - m_angle) < Rotation2d.fromDegrees(3.0).getRadians()) {
-            return true;
-        } else {
-            return false;
-        }
+        // if(Math.abs(m_module.getSteerAngle() - m_angle) < Rotation2d.fromDegrees(3.0).getRadians()) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+        return true;
     }
 
     @Override
