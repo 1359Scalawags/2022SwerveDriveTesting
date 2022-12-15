@@ -11,6 +11,8 @@ import com.swervedrivespecialties.swervelib.Mk4ModuleConfiguration;
 import com.swervedrivespecialties.swervelib.Mk4iSwerveModuleHelper;
 import com.swervedrivespecialties.swervelib.SdsModuleConfigurations;
 import com.swervedrivespecialties.swervelib.SwerveModule;
+
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
@@ -19,6 +21,7 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj2.command.PIDSubsystem;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.RobotBase;
@@ -126,30 +129,33 @@ public class DrivetrainSubsystem extends SubsystemBase {
             FrontLeft.STEER_OFFSET
     );
 
-    // TODO: Fix this for Mk4i
+
     // We will do the same for the other modules
     m_frontRightModule = Mk4iSwerveModuleHelper.createFalcon500(
             tab.getLayout("Front Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(2, 0),
             Mk4iSwerveModuleHelper.GearRatio.L1,
+            
             FrontRight.DRIVE_MOTOR,
             FrontRight.STEER_MOTOR,
             FrontRight.STEER_ENCODER,
             FrontRight.STEER_OFFSET
     );
-    // TODO: Fix this for Mk4i
+
     m_backLeftModule = Mk4iSwerveModuleHelper.createFalcon500(
             tab.getLayout("Back Left Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(4, 0),
+                    
+                    //TODO get .PID.Controller(),
             Mk4iSwerveModuleHelper.GearRatio.L1,
             BackLeft.DRIVE_MOTOR,
             BackLeft.STEER_MOTOR,
             BackLeft.STEER_ENCODER,
             BackLeft.STEER_OFFSET
     );
-    // TODO: Fix this for Mk4i
+
     m_backRightModule = Mk4iSwerveModuleHelper.createFalcon500(
             tab.getLayout("Back Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
